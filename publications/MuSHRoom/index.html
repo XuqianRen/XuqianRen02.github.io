@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MushRoom dataset used for joint 3D Reconstruction and Novel View Synthesis.">
+  <meta name="keywords" content="NeRF, 3D Reconstruction, Mesh, MuSHRoom, Dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MuSHRoom: dataset used for joint 3D Reconstruction and Novel View Synthesis</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .hidden {
+        display: none;
+    }
+  </style>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- JS (确保先加载了jQuery，因为Bootstrap的JS依赖于jQuery) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+<script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+
+</head>
+<body>
+    <script>
+        function toggleCode() {
+            var codeBlock = document.querySelector('.bibtex-code');
+            if (codeBlock.style.display === "none" || codeBlock.style.display === "") {
+                codeBlock.style.display = "block";
+            } else {
+                codeBlock.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+      window.onload = function() {
+  juxtapose.scanPage();
+};
+    </script>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+</nav> 
+
+  <!-- Title, authors -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><img src="./static/images/mushroom.png" height="40" width="40"> MuSHRoom: Multi-Sensor Hybrid Room Dataset for Joint 3D Reconstruction and Novel View Synthesis</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> 
+              <a href="https://xuqianren.github.io">Xuqian Ren</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://wenjiawang0312.github.io/">Wenjia Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://dingdingcai.github.io">Dingding Cai</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Tuuli Tuominen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://users.aalto.fi/~kannalj1/">Juho Kannala</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://esa.rahtu.fi">Esa Rahtu</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tampere University,</span>
+            <span class="author-block"><sup>2</sup>The University of Hongkong,</span>
+            <span class="author-block"><sup>3</sup>Aalto University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/Submission_1690.mp4"
+                type="video/mp4">
+      </video>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Metaverse technologies demand accurate, real-time, and immersive modeling on consumer-grade hardware for both non-human perception 
+            (e.g., drone/robot/autonomous car navigation) and immersive technologies like AR/VR, requiring both structural accuracy and photorealism. 
+            However, there exists a knowledge gap in how to apply geometric reconstruction and photorealism modeling (novel view synthesis) in a unified framework. 
+            
+
+          </p>
+          <p>
+            To address this gap and promote the development of robust and immersive modeling and rendering with consumer-grade devices, first, we propose a 
+            real-world Multi-Sensor Hybrid Room Dataset (MuSHRoom). Our dataset presents exciting challenges and requires state-of-the-art methods to be 
+            cost-effective, robust to noisy data and devices, and can jointly learn 3D reconstruction and novel view synthesis, instead of treating them as 
+            separate tasks, making them ideal for real-world applications. Second, we benchmark several famous pipelines on our dataset for joint 3D mesh 
+            reconstruction and novel view synthesis. Finally, in order to further improve the overall performance, we propose a new method
+            that achieves a good trade-off between the two tasks. Our
+            dataset and benchmark show great potential in promoting
+            the improvements for fusing 3D reconstruction and high-quality rendering in a robust and computationally efficient
+            end-to-end fashion. The dataset will be made publicly available.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+  </div>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Dataset Overview and download</h2>
+          <hr>
+          <div class="content has-text-justified">
+            <p>
+            The dataset can be download through this link. We also provide the codes to process the dataset.
+            </p>
+            <img src="static/images/dataset_exp.pdf" style="width:100%;" class="center">
+  
+
+
+            
+
+            <div class="row align-items-center">
+              <div class="col-md-4 padding-0 canvas-row">
+                  <h4>Kinect Spectacular AI Point Cloud</h4>
+                  <model-viewer
+                          alt="Statue Siren"
+                          src="static/model/coffee_spectacularAI_pointcloud.glb"
+                          style="width: 100%; height: 300px; background-color: #404040"
+                          exposure=".8"
+                          camera-orbit="10deg 180deg 05%"
+                          auto-rotate
+                          camera-controls>
+                  </model-viewer>
+              </div>
+              <div class="col-md-4 padding-0 canvas-row">
+                  <h4>iPhone PolyCam Point Cloud</h4>
+                  <model-viewer
+                          alt="Statue Positional Encoding"
+                          src="static/model/coffee_polycam_pointcloud.glb"
+                          style="width: 100%; height: 300px; background-color: #404040"
+                          exposure=".8"
+                          camera-orbit="0deg 180deg 80%"
+                          auto-rotate
+                          camera-controls>
+                  </model-viewer>
+              </div>
+              <div class="col-md-4 padding-0 canvas-row">
+                  <h4>Reference mesh</h4>
+                  <model-viewer
+                          alt="Statue ReLU"
+                          src="static/model/gt_mesh_sim.glb"
+                          style="width: 100%; height: 300px; background-color: #404040"
+                          exposure=".8"
+                          camera-orbit="0deg 75deg 40%"
+                          auto-rotate
+                          camera-controls>
+                  </model-viewer>
+              </div>
+            </div>
+
+            <p class="spaced">
+              Our dataset contains 10 rooms captured by Kinect, iPhone and Faro scanner.
+               We provide the raw video, extracted rgb image, raw depth, completed depth, Spectacular AI/polycam pose, Spectacular AI/polycam point cloud of each keyframe, as well as ground truth mesh for each room. 
+             
+             
+             </p>
+
+            <p class="spaced">
+              The dataset structure is as follows:
+            </p>
+            
+            <div>
+             <!-- 这是按钮 -->
+             <button class="bibtex btn btn-sm z-depth-0" onclick="toggleCode()" style="font-size: 16px; padding: 10px 18px; cursor: pointer; border: 1px solid gray;">Dataset structure</button>
+
+            </div>
+
+
+            <!-- 这是要展开/折叠的代码块 -->
+            <div class="bibtex-code hidden">
+                <!-- 你的代码内容放在这里 -->
+                <pre><code class="has-line-data" data-line-start="2" data-line-end="60">&lt;room_name&gt;
+  | —— kinect
+    | —— long_capture
+        — images/ <span style="color: darkgreen; font-style: italic;"># extracted rgb images of keyframe</span>
+        — depth/ <span style="color: darkgreen; font-style: italic;"># extracted depth images of keyframe</span>
+        — depth_complte_all/ <span style="color: darkgreen; font-style: italic;"># completed depth used for testing with a different sequence</span>
+        — depth_complte_train/ <span style="color: darkgreen; font-style: italic;"># completed depth used for testing within a single sequence</span>
+        — intrinsic/ <span style="color: darkgreen; font-style: italic;"># intrinsic parameters</span>
+        — PointCloud/ <span style="color: darkgreen; font-style: italic;"># Spectacular AI point cloud of keyframe</span>
+        — pose/  <span style="color: darkgreen; font-style: italic;"># Spectacular AI pose of keyframe</span>
+        — sdf_dataset_all/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing with a different sequence</span>
+        — sdf_dataset_train/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing within a single sequence</span>
+        — sdf_dataset_all_interp_3/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for our method</span>
+        — sdf_dataset_train_interp_3/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for our method</span>
+        — calibration.json; data.jsonl; data.mkv; data2.mkv; vio_config.yaml    <span style="color: darkgreen; font-style: italic;"># raw videos and parameters from Spectacular AI SDK</span>
+        — camera_parameter.txt  <span style="color: darkgreen; font-style: italic;"># camera settings during capture</span>
+        — test.txt <span style="color: darkgreen; font-style: italic;"># image id for testing within a single sequence</span>
+        — transformations_colmap.json <span style="color: darkgreen; font-style: italic;"># global optimized colmap used for testing with a different sequence</span>
+        — transformations_train.json    <span style="color: darkgreen; font-style: italic;"># pose used for testing within a single sequence</span>
+        — transformations.json  <span style="color: darkgreen; font-style: italic;"># raw pose </span>
+        — transformations_interp_all_3.json <span style="color: darkgreen; font-style: italic;"># interplated pose sed for testing with a different sequence</span>
+        — transformations_interp_train_3.json   <span style="color: darkgreen; font-style: italic;"># interplated pose sed for testing within a single sequence</span>
+    | —— short_capture
+          — images/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
+          — depth/   <span style="color: darkgreen; font-style: italic;"> # same with long capture</span>
+          — PointCloud/   <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
+          — pose/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
+          — calibration.json; data.jsonl; data.mkv; data2.mkv; vio_config.yaml    <span style="color: darkgreen; font-style: italic;"># same with long capture </span>
+          — meta_data_align.json  <span style="color: darkgreen; font-style: italic;"># aligned test pose used for testing with a different sequence</span>
+          — transformations_colmap.json <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
+          — transformations.json  <span style="color: darkgreen; font-style: italic;"># raw pose </span>
+  | —— iphone
+      | —— long_capture
+          — images/   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — depth/   <span style="color: darkgreen; font-style: italic;"> # same with Kinect</span>
+          — polycam_mesh/     <span style="color: darkgreen; font-style: italic;"># mesh provided by polycam</span>
+          — sdf_dataset_all/  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — sdf_dataset_train/    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — sdf_dataset_all_interp_4  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — sdf_dataset_train_interp_4    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — polycam_pointcloud.ply    <span style="color: darkgreen; font-style: italic;"># point cloud provided by polycam</span>
+          — mesh_info.json    <span style="color: darkgreen; font-style: italic;"># transformation matrix used for polycam mesh</span>
+          — test.txt  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — transformations_colmap.json   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — transformations_interp_all_4.json <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — transformations_interp_train_4.json   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — transformations.json  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+      | —— short_capture
+          — images/   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — depth/    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — meta_data_align.json  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — transformations_colmap.json   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — transformations.json  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+  —— gt_mesh.ply  <span style="color: darkgreen; font-style: italic;"># reference mesh used for geometry comparison</span>
+  —— icp_iphone.json  <span style="color: darkgreen; font-style: italic;"># aligned transformation matrix used for iPhone sequences</span>
+  —— icp_kinect.json  <span style="color: darkgreen; font-style: italic;"># aligned transformation matrix used for kinect sequences</span>
+                              
+                  </code></pre>
+                
+            </div>
+          
+              
+          
+       
+           
+
+
+
+          </div>
+        </div>
+      </div>
+  
+    </div>
+
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Data Process pipeline</h2>
+            <hr>
+            <div class="content has-text-justified">
+              
+              <img src="static/images/data_pipeline.pdf" style="width:150%;" class="center">
+              <p class="spaced">
+                The procedures for recording real-world indoor room data using the 
+                Kinect, iPhone, and Faro scanner.
+                </p>
+
+              <p>
+
+
+                Kinect and iPhone are used to obtain RGB-D images as 
+                inputs, and the Faro scanner is used to capture the 
+                reference 3D point cloud for geometry reference. 
+                In real-world VR/AR applications, users scan an entire 
+                room with a device and then wear AR glasses to interact 
+                with the environment from random positions and directions.
+                To mimic this real-life scenario, each room is recorded 
+                with a long sequence for training and a shorter sequence 
+                for testing using both the Kinect and iPhone.
+
+
+              </p>
+    
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <section class="section">
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+              <h2 class="title is-3">Novel view synthesis and 3D Reconstruction Results</h2>
+              <hr>
+              <div class="content has-text-justified">
+                <p>
+                We show our 3D reconstruction results and novel view synthesis results compared with NeuS-facto(Zehao et al. 2022) 
+                and Nerfacto(Matthew et al. 2023). 
+                Our method provides a trade-off between the two tasks.
+                </p>
+                <h3>Novel view synthesis visualization</h3>
+                <h4>VR room with Kinect sequence</h4>
+                <div class="center">
+                  <div class="content juxtapose juxtapose-0 juxtapose-6" style="height: 600px; width: 1110px;">
+                    <div class="jx-slider"><div class="jx-handle " style="left: 16.93%;"><div class="jx-arrow jx-left">
+                    </div><div class="jx-control"><div class="jx-controller" tabindex="0" role="slider" aria-valuenow="50"
+                       aria-valuemin="0" aria-valuemax="100"></div></div><div class="jx-arrow jx-right"></div></div><div 
+                       class="jx-image jx-left " style="width: 16.93%;">
+                       <img src="https://github.com/XuqianRen/images/blob/main/vr_nerfacto.png?raw=true" alt="">
+                      </div><div class="jx-image jx-right " style="width: 100%;">
+                        <img src="https://github.com/XuqianRen/images/blob/main/vr_ours.png?raw=true" alt="">
+                      </div><a href="https://juxtapose.knightlab.com" target="_blank" rel="noopener" class="jx-knightlab">
+                        <div class="knightlab-logo"></div><span class="juxtapose-name">JuxtaposeJS</span></a></div></div>
+                  <br>
+                  <div class="content juxtapose juxtapose-0 juxtapose-6" style="height: 600px; width: 1110px;">
+                    <div class="jx-slider"><div class="jx-handle " style="left: 16.93%;"><div class="jx-arrow jx-left">
+
+                    </div><div class="jx-control"><div class="jx-controller" tabindex="0" role="slider" aria-valuenow="50"
+                       aria-valuemin="0" aria-valuemax="100"></div></div><div class="jx-arrow jx-right"></div></div>
+                       <div class="jx-image jx-left " style="width: 16.93%;">
+                        <img src="https://github.com/XuqianRen/images/blob/main/vr_neus-facto.png?raw=true" 
+                        alt=""></div><div class="jx-image jx-right " style="width: 100%;">
+                          <img src="https://github.com/XuqianRen/images/blob/main/vr_ours.png?raw=true" alt=""></div>
+                          <a href="https://juxtapose.knightlab.com" target="_blank" rel="noopener" class="jx-knightlab">
+                            <div class="knightlab-logo"></div><span class="juxtapose-name">JuxtaposeJS</span></a></div></div>
+                  
+
+                </div>
+
+                <h4 class="spaced">Kokko with Kinect sequence</h4>
+                <div class="center">
+                  <div class="content juxtapose juxtapose-0 juxtapose-6" style="height: 600px; width: 1110px;">
+                    <div class="jx-slider"><div class="jx-handle " style="left: 16.93%;"><div class="jx-arrow jx-left">
+                    </div><div class="jx-control"><div class="jx-controller" tabindex="0" role="slider" aria-valuenow="50"
+                       aria-valuemin="0" aria-valuemax="100"></div></div><div class="jx-arrow jx-right"></div></div><div 
+                       class="jx-image jx-left " style="width: 16.93%;">
+                       <img src="https://github.com/XuqianRen/images/blob/main/kokko_nerfacto.png?raw=true" alt="">
+                      </div><div class="jx-image jx-right " style="width: 100%;">
+                        <img src="https://github.com/XuqianRen/images/blob/main/kokko_ours.png?raw=true" alt="">
+                      </div><a href="https://juxtapose.knightlab.com" target="_blank" rel="noopener" class="jx-knightlab">
+                        <div class="knightlab-logo"></div><span class="juxtapose-name">JuxtaposeJS</span></a></div></div>
+                  <br>
+                  <div class="content juxtapose juxtapose-0 juxtapose-6" style="height: 600px; width: 1110px;">
+                    <div class="jx-slider"><div class="jx-handle " style="left: 16.93%;"><div class="jx-arrow jx-left">
+
+                    </div><div class="jx-control"><div class="jx-controller" tabindex="0" role="slider" aria-valuenow="50"
+                       aria-valuemin="0" aria-valuemax="100"></div></div><div class="jx-arrow jx-right"></div></div>
+                       <div class="jx-image jx-left " style="width: 16.93%;">
+                        <img src="https://github.com/XuqianRen/images/blob/main/kokko_neusfacto.png?raw=true" 
+                        alt=""></div><div class="jx-image jx-right " style="width: 100%;">
+                          <img src="https://github.com/XuqianRen/images/blob/main/kokko_ours.png?raw=true" alt=""></div>
+                          <a href="https://juxtapose.knightlab.com" target="_blank" rel="noopener" class="jx-knightlab">
+                            <div class="knightlab-logo"></div><span class="juxtapose-name">JuxtaposeJS</span></a></div></div>
+                  
+
+                </div>
+                <!--      <iframe frameborder="0" class="juxtapose" width="100%" height="1080" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=f57367fa-eb0a-11ec-b5bb-6595d9b17862"></iframe>-->
+
+
+
+                <h3>Mesh visualization</h3>
+                <div class="row align-items-center">
+                  
+                  <div class="col-md-12 padding-0 canvas-row">
+                      <h4>Our reconstruction with Kinect sequence of coffee room</h4>
+                      <model-viewer
+                              alt="kinect_coffee"
+                              src="static/model/coffee_room_kinect.glb"
+                              style="width: 100%; height: 800px; background-color: #404040"
+                              exposure=".8"
+                              camera-orbit="0deg 170deg 80%"
+                              auto-rotate
+                              camera-controls>
+                      </model-viewer>
+                  </div>
+                  <div class="col-md-12 padding-0 canvas-row">
+                      <h4 class="spaced">Our reconstruction with iPhone sequence of coffee room </h4>
+                      <model-viewer
+                              alt="iphone_coffee"
+                              src="static/model/coffee_room_iphone.glb"
+                              style="width: 100%; height: 800px; background-color: #404040"
+                              exposure=".8"
+                              camera-orbit="0deg 60deg 80%"
+                              auto-rotate
+                              camera-controls>
+                      </model-viewer>
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+      
+        </div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Conclusion</h2>
+        <hr>
+        <div class="content has-text-justified">
+          <p>
+            We have proposed a real-world dataset and a new benchmark with multiple sensors for evaluating pipelines on both 3D reconstruction accuracy and novel view synthesis quality.
+            The new dataset poses more realistic challenges and supports more practical evaluation.
+            With consumer-grade devices to collect inputs, pipelines are encouraged to be robust, generalized, and computationally efficient.
+            We also propose a new method and evaluate it with several popular pipelines, revealing the aim to realize both geometry accuracy and immersion still has a long way to go.
+            Our dataset can serve as a foundation for the development of a unified framework training in an end-to-end fashion.
+        </div>
+      </div>
+    </div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Acknowledgement</h2>
+        <hr>
+        <div class="content has-text-justified">
+          <p>
+            This research was supported by the Academy of Finland. 
+            This work was carried out also with the support of Centre for Immersive Visual Technologies <a href="https://civit.fi/">(CIVIT)</a> research infrastructure, Tampere University, Finland.
+            We thank <a href="https://www.linkedin.com/in/valtteri-kaatrasalo-1b9761256/?trk=people-guest_people_search-card&originalSubdomain=fi">Valtteri Kaatrasalo</a> for his guidance in using 
+            the <a href="https://www.spectacularai.com">Spectacular AI</a> SDK. 
+          </p>
+
+
+        </div>
+      </div>
+    </div>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://xuqianren.github.io" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The website template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+            Some codes are borrowed from <a
+            href="https://vsitzmann.github.io/siren/">SIREN</a> and <a
+            href="https://jingwenwang95.github.io/go_surf/">GO-Surf</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
