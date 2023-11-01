@@ -226,23 +226,91 @@
   </div>
 
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-     
-          <h2 class="title is-3">Dataset Overview and download</h2>
-      
-          
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+
+        <!-- Overview. -->
+        <!--                <h3 class="title is-4">Overview</h3>-->
+        <div class="content has-text-justified">
+            <div class="container is-max-desktop has-text-centered">
+                <img src="img/overview.jpg" width="100%">
+            </div>
             <p>
+                To render a pixel, we emit a <b>cone</b> from the camera’s projection center to the pixel on the
+                image plane, and then we cast a set of spheres inside the cone. Next, the spheres are
+                orthogonally projected
+                on the three planes and featurized by our <b>Tri-Mip encoding</b>. After that the feature
+                vector is fed into the tiny MLP to non-linearly map to
+                density and color. Finally, the density and
+                color of the spheres are integrated using volume rendering to produce final color for the pixel.
+            </p>
+        </div>
+        <!--/ Overview. -->
+
+        <h2 class="title is-3">Results</h2>
+
+        <h3 class="title is-4">Quality <i>vs.</i> Reconstruction time</h3>
+        <div class="container is-max-desktop has-text-centered">
+            <img src="img/teaser.jpg" width="50%">
+        </div>
+        <p>
+            Our Tri-MipRF achieves state-of-the-art rendering quality while can be reconstructed efficiently,
+            compared with cutting-edge radiance fields methods, <i>e.g.,</i> NeRF, MipNeRF, Plenoxels,
+            TensoRF, and Instant-ngp. Equipping Instant-ngp with super-sampling (named Instant-ngp<sup>↑5×</sup>)
+            improves the rendering quality to a certain extent but significantly slows down the reconstruction.
+        </p>
+        <br>
+
+        <h3 class="title is-4">In-the-wild Captures</h3>
+        <div class="container is-max-desktop hasxt-centered">
+            <img src="img/in_the_wild.jpg" width="100%">
+        </div>
+        <p>
+            To further demonstrate the applicability, we captured several objects in the wild, performed SFM
+            on the sequence to estimate the camera’s intrinsic and extrinsic parameters, and applied our
+            Tri-MipRF to reconstruct them. We show three example results here, where we can see the rendered
+            novel views faithfully reproduce the
+            detailed structures and appearances, and the PSNR/SSIM
+            values also evidence the applicability of our method.
+        </p>
+        <br>
+
+
+        <!--                <h3 class="title is-4">Hybrid Volume-surface Rendering</h3>-->
+        <!--                <div class="container is-max-desktop hasxt-centered">-->
+        <!--                    <img src="img/in_the_wild.jpg" width="100%">-->
+        <!--                </div>-->
+        <!--                <p>-->
+        <!--                    To further demonstrate the applicability, we captured several objects in the wild, performed SFM-->
+        <!--                    on the sequence to estimate the camera’s intrinsic and extrinsic parameters, and applied our-->
+        <!--                    Tri-MipRF to reconstruct them. We show three example results here, where we can see the rendered-->
+        <!--                    novel views faithfully reproduce the-->
+        <!--                    detailed structures and appearances, and the PSNR/SSIM-->
+        <!--                    values also evidence the applicability of our method.-->
+        <!--                </p>-->
+
+
+    </div>
+</div>
+
+
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+          <h2 class="title is-3">Dataset Overview and download</h2>
+  
+          <!-- Overview. -->
+          <!--                <h3 class="title is-4">Overview</h3>-->
+          <div class="content has-text-justified">
+              <div class="container is-max-desktop has-text-centered">
+                <img src="https://github.com/XuqianRen/XuqianRen.github.io/blob/master/publications/MuSHRoom/static/images/dataset_exp.png?raw=true" style="width:100%;" class="center">
+  
+              </div>
+              <p>
             The dataset is coming soon. We also provide the codes to process the dataset.
             </p>
-            <img src="https://github.com/XuqianRen/XuqianRen.github.io/blob/master/publications/MuSHRoom/static/images/dataset_exp.png?raw=true" style="width:100%;" class="center">
-  
-
-
             
-
             <div class="row align-items-center">
               <div class="col-md-4 padding-0 canvas-row">
                   <h4>Kinect Spectacular AI Point Cloud</h4>
