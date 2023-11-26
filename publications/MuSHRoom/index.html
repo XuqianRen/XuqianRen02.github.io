@@ -313,20 +313,18 @@
         — intrinsic/ <span style="color: darkgreen; font-style: italic;"># intrinsic parameters</span>
         — PointCloud/ <span style="color: darkgreen; font-style: italic;"># Spectacular AI point cloud of keyframe</span>
         — pose/  <span style="color: darkgreen; font-style: italic;"># Spectacular AI pose of keyframe. These poses are aligned with the metric of depth.</span>
-        — sdf_dataset_all/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing with a different sequence</span>
-        — sdf_dataset_train/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing within a single sequence</span>
         — sdf_dataset_all_interp_3/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for our method</span>
         — sdf_dataset_train_interp_3/ <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for our method</span>
         — calibration.json; data.jsonl; data.mkv; data2.mkv; vio_config.yaml    <span style="color: darkgreen; font-style: italic;"># raw videos and parameters from Spectacular AI SDK</span>
         — test.txt <span style="color: darkgreen; font-style: italic;"># image name for testing within a single sequence</span>
         — transformations_colmap.json <span style="color: darkgreen; font-style: italic;"># global optimized colmap used for testing with a different sequence</span>
-        — transformations_train.json    <span style="color: darkgreen; font-style: italic;"># pose used for testing within a single sequence. Re-scaled pose. </span>
-        — transformations.json  <span style="color: darkgreen; font-style: italic;"># Re-scaled pose from "pose" folder. </span>
+        — transformations.json  <span style="color: darkgreen; font-style: italic;"># pose saved in the json file. Poses are in the OPENGL coordination. </span>
     | —— short_capture
           — images/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
           — depth/   <span style="color: darkgreen; font-style: italic;"> # same with long capture</span>
           — PointCloud/   <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
           — pose/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
+          — intrinsic/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
           — calibration.json; data.jsonl; data.mkv; data2.mkv; vio_config.yaml    <span style="color: darkgreen; font-style: italic;"># same with long capture </span>
           — meta_data_align.json  <span style="color: darkgreen; font-style: italic;"># aligned test pose used for testing with a different sequence</span>
           — transformations_colmap.json <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
@@ -336,8 +334,8 @@
           — images/   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — depth/   <span style="color: darkgreen; font-style: italic;"> # same with Kinect</span>
           — polycam_mesh/     <span style="color: darkgreen; font-style: italic;"># mesh provided by polycam</span>
-          — sdf_dataset_all/  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
-          — sdf_dataset_train/    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
+          — sdf_dataset_all/  <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing with a different sequence</span>
+          — sdf_dataset_train/    <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing within a single sequence</span>
           — sdf_dataset_all_interp_4  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — sdf_dataset_train_interp_4    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — polycam_pointcloud.ply    <span style="color: darkgreen; font-style: italic;"># point cloud provided by polycam</span>
