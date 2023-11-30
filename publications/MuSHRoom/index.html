@@ -308,8 +308,6 @@
     | —— long_capture
         — images/ <span style="color: darkgreen; font-style: italic;"># extracted rgb images of keyframe</span>
         — depth/ <span style="color: darkgreen; font-style: italic;"># extracted depth images of keyframe</span>
-        — depth_complte_all/ <span style="color: darkgreen; font-style: italic;"># completed depth used for testing with a different sequence</span>
-        — depth_complte_train/ <span style="color: darkgreen; font-style: italic;"># completed depth used for testing within a single sequence</span>
         — intrinsic/ <span style="color: darkgreen; font-style: italic;"># intrinsic parameters</span>
         — PointCloud/ <span style="color: darkgreen; font-style: italic;"># Spectacular AI point cloud of keyframe</span>
         — pose/  <span style="color: darkgreen; font-style: italic;"># Spectacular AI pose of keyframe. These poses are aligned with the metric of depth.</span>
@@ -326,7 +324,6 @@
           — pose/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
           — intrinsic/ <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
           — calibration.json; data.jsonl; data.mkv; data2.mkv; vio_config.yaml    <span style="color: darkgreen; font-style: italic;"># same with long capture </span>
-          — meta_data_align.json  <span style="color: darkgreen; font-style: italic;"># aligned test pose used for testing with a different sequence</span>
           — transformations_colmap.json <span style="color: darkgreen; font-style: italic;"># same with long capture</span>
           — transformations.json  <span style="color: darkgreen; font-style: italic;"># raw pose </span>
   | —— iphone
@@ -334,8 +331,6 @@
           — images/   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — depth/   <span style="color: darkgreen; font-style: italic;"> # same with Kinect</span>
           — polycam_mesh/     <span style="color: darkgreen; font-style: italic;"># mesh provided by polycam</span>
-          — sdf_dataset_all/  <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing with a different sequence</span>
-          — sdf_dataset_train/    <span style="color: darkgreen; font-style: italic;"># sdfstudio format dataset used for testing within a single sequence</span>
           — sdf_dataset_all_interp_4  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — sdf_dataset_train_interp_4    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — polycam_pointcloud.ply    <span style="color: darkgreen; font-style: italic;"># point cloud provided by polycam</span>
@@ -345,10 +340,10 @@
       | —— short_capture
           — images/   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — depth/    <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
-          — meta_data_align.json  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — transformations_colmap.json   <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
           — transformations.json  <span style="color: darkgreen; font-style: italic;"># same with Kinect</span>
   —— gt_mesh.ply  <span style="color: darkgreen; font-style: italic;"># reference mesh used for geometry comparison</span>
+  —— gt_pd.ply  <span style="color: darkgreen; font-style: italic;"># reference point cloud used for geometry comparison</span>
   —— icp_iphone.json  <span style="color: darkgreen; font-style: italic;"># aligned transformation matrix used for iPhone sequences</span>
   —— icp_kinect.json  <span style="color: darkgreen; font-style: italic;"># aligned transformation matrix used for kinect sequences</span>
                               
